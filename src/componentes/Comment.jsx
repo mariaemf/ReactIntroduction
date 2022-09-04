@@ -1,10 +1,11 @@
 import { LinkSimple, ListChecks, LockSimple, ThumbsDown, ThumbsUp, Trash } from 'phosphor-react';
+import { Avatar } from './Avatar';
 import style from './Comment.module.css';
 
 export function Comment(){
   return (
     <div className={style.comment}>
-      <img src='https://github.com//mariaemf.png'/>
+      <Avatar hasBorder={false} src='https://github.com//mariaemf.png'/>
      <div className={style.commentBox}>
      
       <div className={style.commentContent}>
