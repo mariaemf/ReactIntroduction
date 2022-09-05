@@ -5,6 +5,39 @@ import './global.css';
 import  styles from './componentes/App.module.css';
 import { Sidebar } from './componentes/sidebar';
 
+const posts = [
+  {
+    id: 1,
+    author: {
+    avatarUrl: 'https://github.com//mariaemf.png',
+    name:'Maria Freitas',  
+    role: 'Desenvolvedora de Software'
+    },
+    content: [
+      {type: 'paragraph', content:'Fala galeraa 👋'},
+      {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: 'jane.design/doctorcare'},
+    ],
+    publisheAt: new Date('2022-09-05 20:00:00'),
+  },
+  {
+    id: 2,
+    author: {
+    avatarUrl: 'https://github.com//mateussp97.png',
+    name:'Mateus de Souza',  
+    role: 'Engenheiro de Software'
+    },
+    content: [
+      {type: 'paragraph', content:'Fala galeraa 👋'},
+      {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: 'jane.design/doctorcare'},
+    ],
+    publisheAt: new Date('2022-09-07 20:00:00'),
+  },
+];
+
+
+
 
 export function App() {
  
@@ -14,14 +47,16 @@ export function App() {
       <div className={styles.wrapper}>
      <Sidebar/>
         <main>
-        <Post 
-        author="Maria Freitas" 
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatum fuga animi quam est consectetur voluptatem dolor? Qui ipsam ducimus consequuntur nam numquam doloribus debitis, quibusdam, repudiandae veritatis esse illo."
-      />
-      <Post
-      author="Mateus Souza"
-      content="Novo Site muito legal"
-      />
+      {posts.map(post => {
+        return (
+        <Post
+         author={post.author} 
+         content={post.content}
+         publisheAt={post.publisheAt}
+        
+        />
+      )
+      })}
         </main>
 
       </div>
