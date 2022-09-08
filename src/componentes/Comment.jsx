@@ -2,7 +2,7 @@ import { LinkSimple, ListChecks, LockSimple, ThumbsDown, ThumbsUp, Trash } from 
 import { Avatar } from './Avatar';
 import style from './Comment.module.css';
 
-export function Comment(){
+export function Comment({ content }){
   return (
     <div className={style.comment}>
       <Avatar hasBorder={false} src='https://github.com//mariaemf.png'/>
@@ -25,7 +25,7 @@ export function Comment(){
           </button>
         </header>
 
-        <p>Muito bom Heloisa, parabéns</p>
+        <p>{content}</p>
      </div>
       
         <footer>
