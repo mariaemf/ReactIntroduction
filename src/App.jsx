@@ -46,21 +46,22 @@ export function App() {
       <Header/>
       <div className={styles.wrapper}>
      <Sidebar/>
+
         <main>
-      {posts.map(post => {
-        return (
-        <Post
-         author={post.author} 
-         content={post.content}
-         publisheAt={post.publisheAt}
+        {posts.map(post => {
+        
+          return (
+           <Post
+           key={post.id}
+           author={post.author} 
+           content={post.content}
+           publisheAt={post.publisheAt}
         
         />
       )
       })}
         </main>
-
       </div>
-   
     </div>
   )
 }
